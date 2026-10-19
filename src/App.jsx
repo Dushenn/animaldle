@@ -9,9 +9,9 @@ function App() {
       <Header />
 
       <main className="hints">
-        <HintCard />
-        <HintCard />
-        <HintCard />
+        <HintCard number={1} text="Živi u Africi."/>
+        <HintCard number={2} text="Ima crno-bele pruge."/>
+        <HintCard number={3} text="Biljojed je."/>
       </main>
 
       <Footer />
