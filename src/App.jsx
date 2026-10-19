@@ -32,6 +32,8 @@ function App() {
   const [attempts, setAttempts] = useState([]);
   const [isWon, setIsWon] = useState(false);
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const isLost = !isWon && attempts.length >= MAX_POKUSAJA
   const gameOver = isWon || isLost
 
@@ -60,6 +62,18 @@ function App() {
   return (
     <div className="app">
       <Header />
+      <button onClick={()=> setMenuOpen(!menuOpen)} style={{marginBottom: "10px"}}>
+        Kako se igra {menuOpen ? '▲' : '▼'}
+      </button>
+
+      <div className={`menu ${menuOpen ? 'open' : ''}`}>
+        <ul>
+          <li>Prikazan je jedan hint o skrivenoj životinji.</li>
+          <li>Otkrivaj nove nagoveštaje dugmetom ispod.</li>
+          <li>Imaš {MAX_POKUSAJA} pokušaja da pogodiš.</li>
+        </ul>
+      </div>
+
 
       <main className="hints">
         {
